@@ -1,11 +1,14 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { demoIncidents } from "@/lib/demo_incidents"
 
 export function useCrisisSocket() {
 
-  const [traces, setTraces] = useState<any[]>([])
-  const [incidents, setIncidents] = useState<any[]>([])
+  const [traces, setTraces] = useState<any[]>(
+    demoIncidents[0].traces || []
+  )
+  const [incidents, setIncidents] = useState<any[]>(demoIncidents)
 
   useEffect(() => {
 
